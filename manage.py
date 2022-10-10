@@ -3,12 +3,15 @@
 import os
 import sys
 
+from dotenv import load_dotenv
+
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ecommerce_clothes.settings")
     try:
         from django.core.management import execute_from_command_line
+        load_dotenv()
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
